@@ -16,8 +16,8 @@ Removing 0 daemon stop events from registry
 Starting a Gradle Daemon (subsequent builds will be faster)
 Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.2.1 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.2.1/lib/gradle-launcher-8.2.1.jar -javaagent:/home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.2.1/lib/agents/gradle-instrumentation-agent-8.2.1.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.2.1
 Successfully started process 'Gradle build daemon'
-An attempt to start the daemon took 1.034 secs.
-The client will now receive all logging from the daemon (pid: 2818). The daemon log file: /home/runner/.gradle/daemon/8.2.1/daemon-2818.out.log
+An attempt to start the daemon took 0.935 secs.
+The client will now receive all logging from the daemon (pid: 2807). The daemon log file: /home/runner/.gradle/daemon/8.2.1/daemon-2807.out.log
 Starting build in new daemon [memory: 512 MiB]
 Closing daemon's stdin at end of input.
 The daemon will no longer process any standard input.
@@ -44,4 +44,4 @@ Included projects: [root project 'LocalShare', project ':app']
 > Configure project :
 Evaluating root project 'LocalShare' using build file '/home/runner/work/echoSystem-native2/echoSystem-native2/build.gradle'.
 Compiling build file '/home/runner/work/echoSystem-native2/echoSystem-native2/build.gradle' using SubsetScriptTransformer.
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1779270853035.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1779270902471.json
