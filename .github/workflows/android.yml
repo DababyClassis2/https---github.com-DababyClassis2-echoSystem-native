@@ -6,13 +6,15 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
@@ -33,7 +35,6 @@ jobs:
     - name: Accept licenses
       run: yes | sdkmanager --licenses
 
-    # ⭐ NEW: modern Gradle setup (replaces deprecated gradle-build-action)
     - name: Setup Gradle (cache disabled)
       uses: gradle/actions/setup-gradle@v6
       with:
@@ -42,17 +43,15 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    # ⭐ Build APK normally
     - name: Build APK
       run: ./gradlew assembleDebug --stacktrace --info
 
-    # ⭐ NEW: Save full build output to root of repo
     - name: Save build output to file
       run: |
         ./gradlew assembleDebug --stacktrace --info > build_output.txt 2>&1
 
-    # ⭐ NEW: Commit build log to repo root (overwrites each run)
     - name: Commit build log
+      if: github.event_name == 'push'
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
