@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   build:
+    if: github.actor != 'github-actions'
     runs-on: ubuntu-latest
 
     steps:
@@ -41,18 +42,17 @@ jobs:
     - name: Setup Gradle (cache disabled)
       uses: gradle/actions/setup-gradle@v6
       with:
+        gradle-version: 8.2.1
         cache-disabled: true
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    # ⭐ Build + capture output in one step
     - name: Build APK and capture output
       run: |
         ./gradlew assembleDebug --stacktrace --info | tee build_output.txt
       continue-on-error: true
 
-    # ⭐ Commit log only on push to main
     - name: Commit build log
       if: github.event_name == 'push'
       run: |
