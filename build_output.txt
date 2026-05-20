@@ -1,7 +1,7 @@
 Initialized native services in: /home/runner/.gradle/native
 Initialized jansi services in: /home/runner/.gradle/native
-The client will now receive all logging from the daemon (pid: 2799). The daemon log file: /home/runner/.gradle/daemon/9.5.1/daemon-2799.out.log
-Starting 2nd build in daemon [uptime: 37.181 secs, performance: 99%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 17% of 384 MiB]
+The client will now receive all logging from the daemon (pid: 2794). The daemon log file: /home/runner/.gradle/daemon/9.5.1/daemon-2794.out.log
+Starting 2nd build in daemon [uptime: 36.676 secs, performance: 99%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 17% of 384 MiB]
 Using 4 worker leases.
 Operational build model parameters: {cachingModelBuilding=false, configurationCache=false, configurationCacheDisabledReason=null, configurationCacheParallelLoad=false, configurationCacheParallelStore=false, configureOnDemand=false, invalidateCoupledProjects=false, isolatedProjects=false, modelAsProjectDependency=false, modelBuilding=false, parallelModelBuilding=false, parallelProjectConfiguration=false, parallelProjectExecution=false, resilientModelBuilding=false}
 Now considering [/home/runner/work/echoSystem-native2/echoSystem-native2] as hierarchies to watch
@@ -27,7 +27,7 @@ Resolved plugin [id: 'org.jetbrains.kotlin.android']
 Resolved plugin [id: 'org.jetbrains.kotlin.plugin.serialization']
 Resolved plugin [id: 'com.google.dagger.hilt.android']
 Resolved plugin [id: 'kotlin-kapt']
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_5-1779269167545.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_5-1779269247762.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/echoSystem-native2/echoSystem-native2/build/reports/problems/problems-report.html
 
@@ -279,4 +279,4 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/9.5.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 843ms
+BUILD FAILED in 796ms
