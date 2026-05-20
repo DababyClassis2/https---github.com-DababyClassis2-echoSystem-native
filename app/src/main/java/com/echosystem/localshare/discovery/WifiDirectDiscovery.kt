@@ -7,7 +7,7 @@ import com.echosystem.localshare.model.DeviceCandidate
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.channelFlow
+import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
 class WifiDirectDiscovery @Inject constructor(
@@ -16,7 +16,7 @@ class WifiDirectDiscovery @Inject constructor(
     private val manager = context.getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager
     private val channel = manager.initialize(context, context.mainLooper, null)
 
-    fun discover(): Flow<DeviceCandidate> = channelFlow {
+    fun discover(): Flow<DeviceCandidate> = callbackFlow {
         val serviceInfo = WifiP2pDnsSdServiceInfo.newInstance("LocalShare", "_localshare._tcp.", mapOf("port" to "8080"))
         
         manager.addLocalService(channel, serviceInfo, null)
