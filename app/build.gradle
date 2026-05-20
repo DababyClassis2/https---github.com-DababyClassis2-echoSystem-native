@@ -59,6 +59,7 @@ android {
                 'META-INF/DEPENDENCIES',
                 'META-INF/LICENSE',
                 'META-INF/NOTICE',
+                'META-INF/services/reactor.blockhound.integration.BlockHoundIntegration',
             ]
         }
     }

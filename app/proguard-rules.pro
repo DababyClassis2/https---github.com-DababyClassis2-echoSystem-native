@@ -28,3 +28,7 @@
 
 # Keep model classes for serialization
 -keep class com.echosystem.localshare.model.** { *; }
+
+# BlockHound (Transitive dependency cleanup)
+-dontwarn reactor.blockhound.**
+-dontwarn reactor.blockhound.integration.BlockHoundIntegration
