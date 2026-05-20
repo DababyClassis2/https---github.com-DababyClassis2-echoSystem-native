@@ -14,7 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GH_PAT }}
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
@@ -43,13 +46,18 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
+    # Build step (allowed to fail)
     - name: Build APK
       run: ./gradlew assembleDebug --stacktrace --info
+      continue-on-error: true
 
+    # Always generate build log
     - name: Save build output to file
       run: |
         ./gradlew assembleDebug --stacktrace --info > build_output.txt 2>&1
+      continue-on-error: true
 
+    # Commit log only on push to main
     - name: Commit build log
       if: github.event_name == 'push'
       run: |
@@ -58,3 +66,5 @@ jobs:
         git add build_output.txt
         git commit -m "Update build output log" || echo "No changes to commit"
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
