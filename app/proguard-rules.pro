@@ -32,3 +32,7 @@
 # BlockHound (Transitive dependency cleanup)
 -dontwarn reactor.blockhound.**
 -dontwarn reactor.blockhound.integration.BlockHoundIntegration
+
+# Keep repository and bus classes
+-keep class com.echosystem.localshare.repository.** { *; }
+-keep class com.echosystem.localshare.server.ServerEventBus { *; }
